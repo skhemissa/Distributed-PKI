@@ -26,9 +26,9 @@ Global set up:
 - Install Multichain... very easy : https://www.multichain.com/download-install/
 
 - Create the Ledger 
-...
+```
 	multichain-util create distributedPKI
-...
+```
 - Allow all nodes to read the ledger
 	change the chain parameter into the following file $HOME/.multichain/distributedPKI/params.dat 
 		anyone-can-connect = true
