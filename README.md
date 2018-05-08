@@ -1,4 +1,4 @@
-#Distributed Public Key Infrastructure
+# Distributed Public Key Infrastructure
 	
 Two kind of entries in the ledger : entries that contains public keys and entries that contains revokated keys. 
 	
