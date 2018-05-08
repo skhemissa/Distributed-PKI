@@ -1,5 +1,6 @@
 # Distributed Public Key Infrastructure
 	
+## Description
 Two kind of entries in the ledger : entries that contains public keys and entries that contains revokated keys. 
 	
 A holder has an unique ID. This ID is used has identifier of an entry into the ledger.
@@ -17,11 +18,17 @@ To secure their communication, both parties can share their ID and public key fi
 Only some nodes can write and revoked keys into the ledger (Permissionned Ledger).
 By default, other node can read the ledger.
 
+
+## Usage
+
+## Initialization
 Global set up:
 - Install Multichain... very easy : https://www.multichain.com/download-install/
 
 - Create the Ledger 
+...
 	multichain-util create distributedPKI
+...
 - Allow all nodes to read the ledger
 	change the chain parameter into the following file $HOME/.multichain/distributedPKI/params.dat 
 		anyone-can-connect = true
