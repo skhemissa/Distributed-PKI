@@ -44,7 +44,7 @@ Global set up:
 	Whitin the Multichain CLI, run the following commands :
 		> create stream publicKeys false
 		> exit
-- Install pip (Package manager for Python): apt-get install python-pip
+- Install pip (Package manager for Python): sudo apt-get install python-pip
 - Install Savoir, a JsonRPC wrapper for Multichain:
         pip install savoir
         if you get the following error message when you run a script : "ImportError: No module named Savoir" see https://github.com/DXMarkets/Savoir/issues/6#issuecomment-335036784
