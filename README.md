@@ -29,12 +29,12 @@ Create the Ledger
 ```
 	multichain-util create distributedPKI
 ```
-Allow all nodes to read the ledger
-	Into the following file
+Allow all nodes read the ledger:
+Into the following file
 ```
 	$HOME/.multichain/distributedPKI/params.dat
 ```
-	Change the following parameter
+Change the following parameter
 ```
 		anyone-can-connect = true
 ```
