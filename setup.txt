@@ -18,18 +18,18 @@ Start the ledger:
   Otherwise the communication node number can be obtained by running the following command: 
     cat $HOME/.multichain/distributedPKI/params.dat | grep -e "default-network-port"
 
-Create a stream (the container of keys where the distributed ledger will store data) :
+Create a stream (the container where the distributed ledger will store data) :
   Run the following command to access to the command line interface of multichain:
     multichain-cli distributedPKI 
   Whitin the Multichain CLI, run the following commands:
     create stream publicKeys false
-  Then
+  Then exit:
     exit
     
-Install pip (Package manager for Python):
+Install pip (Package manager for Python), that will allow installing Savoir the JsonRPC wrapper for Multichain:
   sudo apt-get install python-pip
 
-Install Savoir, a JsonRPC wrapper for Multichain:
+Install Savoir:
   pip install savoir
   /!\ if you get the following error message when you run a script:
   	"ImportError: No module named Savoir"
@@ -46,11 +46,12 @@ with the following inputs:
   /!\ no change for rpchost, chainName, streamName
 
 GREAT : you can use the script library on this node.
+
 Adding a new node to the distributed ledger:
-  Install Multichain.
+  Install Multichain as previously described.
   Run the following command:
     multichaind distributedPKI@[ip-address]:[port] &
-    /!\ The command, included the ip address and the communication port are displayed when the first node start.
+    /!\ The command, included the ip address and the communication port, was displayed when the first node start.
     ... wait few seconds for ledger synchronization.
 
 Install Savoir as described previously, including the bug !
@@ -58,7 +59,7 @@ Install Savoir as described previously, including the bug !
 Update the ledger.conf file of the new node with the local data as describted for the first node
 /!\ the password of the new node isn't the same then the first node.
 
-If you want grant the new node to write into the distributed ledger:
+If you want grant the new node to write into the ledger:
   Getting the wallet address of the new node = Run the following command:
     multichain-cli distributedPKI getaddresses
   Save the wallet_id displayed.
