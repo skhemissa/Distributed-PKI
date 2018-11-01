@@ -23,9 +23,9 @@ By default, other node can read the ledger.
 
 ## Initialization
 Global set up:
-- Install Multichain... very easy : https://www.multichain.com/download-install/
+-Install Multichain... very easy : https://www.multichain.com/download-install/
 
-- Create the Ledger 
+-Create the Ledger 
 ```
 	multichain-util create distributedPKI
 ```
