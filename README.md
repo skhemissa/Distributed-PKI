@@ -64,19 +64,20 @@ GREAT : you can use the script library on this node.
 		run the following command :
 			multichaind distributedPKI@[ip-address]:[port]
 		The ip-address and port are related to the first node
-	
-	If you want grant a node to write into the distributed ledger :
-	Save the wallet_id displayed when multichain start into the new node.
-	
-	On the first node, run the following commands:
-		multichain-cli distributedPKI grant wallet_id connect, receive
-		multichain-cli grant wallet_id publicKeys.write
-	
-	On the second node:
-	multichaind distributedPKI -daemon
 	... wait few minutes for synchronization
 
+	If you want grant the new node to write into the distributed ledger :
+	Getting the wallet address of the new node : 
+		Run the following command :
+			multichain-cli distributedPKI getaddresses
+		Save the wallet_id displayed.
+	
+	On the first node, run the following commands:
+		multichain-cli distributedPKI grant wallet_id send
+		multichain-cli distributedPKI grant wallet_id publicKeys.write
+	
+
 	Install Savoir.
-
-	Update the ledger.conf file with the local data:
-
+	
+	Update the ledger.conf file of the new node with the local data as describted for the first node
+	/!\ the password of the new node isn't the same then the first node.
