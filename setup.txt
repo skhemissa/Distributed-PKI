@@ -35,9 +35,10 @@ Install Savoir, a JsonRPC wrapper for Multichain:
   	"ImportError: No module named Savoir"
   Apply the following resolution: https://github.com/DXMarkets/Savoir/issues/6#issuecomment-335036784
 
+Upload the D-PKI project directory.
 Into the D-PKI scripts directory, update the following file:
   ledger.conf
-with the following inputs :
+with the following inputs:
   rpcport by running the following command
     cat $HOME/.multichain/distributedPKI/params.dat | grep default-rpc-port
   and rpcuser and rpcpasswrd by running the following command
