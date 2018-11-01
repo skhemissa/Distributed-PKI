@@ -31,7 +31,9 @@ Install pip (Package manager for Python):
 
 Install Savoir, a JsonRPC wrapper for Multichain:
   pip install savoir
-  /!\ if you get the following error message when you run a script : "ImportError: No module named Savoir" see https://github.com/DXMarkets/Savoir/issues/6#issuecomment-335036784
+  /!\ if you get the following error message when you run a script:
+  	"ImportError: No module named Savoir"
+  Apply the following resolution: https://github.com/DXMarkets/Savoir/issues/6#issuecomment-335036784
 
 Into the D-PKI scripts directory, update the following file:
   ledger.conf
