@@ -30,9 +30,14 @@ Create the Ledger
 	multichain-util create distributedPKI
 ```
 Allow all nodes to read the ledger
-	change the chain parameter into the following file $HOME/.multichain/distributedPKI/params.dat 
+	Into the following file
+	```
+	$HOME/.multichain/distributedPKI/params.dat
+	```
+	Change the following parameter
+	```
 		anyone-can-connect = true
-
+	```
 Restart the ledger to apply new configuration 
 	Run the following command: 
 		multichaind distributedPKI -daemon
