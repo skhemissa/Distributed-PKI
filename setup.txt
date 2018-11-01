@@ -1,0 +1,64 @@
+Global set-up:
+  Install Multichain... very easy : https://www.multichain.com/download-install/
+
+Create the Ledger
+
+	multichain-util create distributedPKI
+
+Allow all nodes to read the ledger change the chain parameter :
+  Into the following file:
+    $HOME/.multichain/distributedPKI/params.dat
+  Update the following parameter:
+    anyone-can-connect = true
+
+Start the ledger:
+  Run the following command:
+    multichaind distributedPKI -daemon
+  Please note the output line that show the command to run into other nodes of the network, speacially the communication port number.
+  Otherwise the communication node number can be obtained by running the following command: 
+    cat $HOME/.multichain/distributedPKI/params.dat | grep -e "default-network-port"
+
+Create a stream (the container of keys where the distributed ledger will store data) :
+  Run the following command to access to the command line interface of multichain:
+    multichain-cli distributedPKI 
+  Whitin the Multichain CLI, run the following commands:
+    create stream publicKeys false
+  Then
+    exit
+    
+Install pip (Package manager for Python):
+  sudo apt-get install python-pip
+
+Install Savoir, a JsonRPC wrapper for Multichain:
+  pip install savoir
+  /!\ if you get the following error message when you run a script : "ImportError: No module named Savoir" see https://github.com/DXMarkets/Savoir/issues/6#issuecomment-335036784
+
+Into the D-PKI scripts directory, update the following file:
+  ledger.conf
+with the following inputs :
+  rpcport by running the following command
+    cat $HOME/.multichain/distributedPKI/params.dat | grep default-rpc-port
+  and rpcuser and rpcpasswrd by running the following command
+    cat $HOME/.multichain/distributedPKI/multichain.conf
+  /!\ no change for rpchost, chainName, streamName
+
+GREAT : you can use the script library on this node.
+Adding a new node to the distributed ledger:
+  Install Multichain.
+  Run the following command:
+    multichaind distributedPKI@[ip-address]:[port] &
+    /!\ The command, included the ip address and the communication port are displayed when the first node start.
+    ... wait few minutes for synchronization
+
+If you want grant the new node to write into the distributed ledger:
+  Getting the wallet address of the new node = Run the following command:
+    multichain-cli distributedPKI getaddresses
+  Save the wallet_id displayed.
+  On the first node, run the following commands:
+    multichain-cli distributedPKI grant wallet_id send
+    multichain-cli distributedPKI grant wallet_id publicKeys.write
+
+Install Savoir as described previously, including the bug !
+
+Update the ledger.conf file of the new node with the local data as describted for the first node
+/!\ the password of the new node isn't the same then the first node.
