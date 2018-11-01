@@ -36,7 +36,7 @@ Global set up:
 - Restart the ledger to apply new configuration 
 	Run the following command: 
 		multichaind distributedPKI -daemon
-	The communication port number between nodes is displayed, otherwise it is available in $HOME/.multichain/distributedPKI/params.dat, value of default-rpc-port
+	Please note the command to run into other nodes of the network, speacially the communication port number, otherwise the communication node number is available in $HOME/.multichain/distributedPKI/params.dat, value of "default-network-port" parameter.
 
 - create a stream, the container of keys: 
 	Run the following command:
