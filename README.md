@@ -64,11 +64,13 @@ GREAT : you can use the script library on this node.
 		run the following command :
 			multichaind distributedPKI@[ip-address]:[port]
 		The ip-address and port are related to the first node
-		The wallet_id of this node is displayed
+	
+	If you want grant a node to write into the distributed ledger :
+	Save the wallet_id displayed when multichain start into the new node.
 	
 	On the first node, run the following commands:
 		multichain-cli distributedPKI grant wallet_id connect, receive
-		multichain-cli grant wallet_id stream1.write
+		multichain-cli grant wallet_id publicKeys.write
 	
 	On the second node:
 	multichaind distributedPKI -daemon
