@@ -64,7 +64,7 @@ GREAT : you can use the script library on this node.
 - Adding a new node to the distributed ledger :
 	Install Multichain
 		run the following command :
-			multichaind distributedPKI@[ip-address]:[port]
+			multichaind distributedPKI@[ip-address]:[port] &
 		The ip-address and port are related to the first node
 	... wait few minutes for synchronization
 
