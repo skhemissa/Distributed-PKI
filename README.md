@@ -50,9 +50,11 @@ Global set up:
         if you get the following error message when you run a script : "ImportError: No module named Savoir" see https://github.com/DXMarkets/Savoir/issues/6#issuecomment-335036784
 
 - Into the D-PKI scripts directory, update the file ledger.conf with the following inputs :
-        rpcport >> from file $HOME/.multichain/distributedPKI/params.dat get the value for default-rpc-port    
-        rpcuser and rpcpassword >> from file $HOME/.multichain/distributedPKI/multichain.conf
-        no change for rpchost, chainName, streamName
+        rpcport by running the following command
+		cat $HOME/.multichain/distributedPKI/params.dat | grep default-rpc-port
+        rpcuser and rpcpasswrd by running the following command 
+		cat $HOME/.multichain/distributedPKI/multichain.conf
+	/!\ no change for rpchost, chainName, streamName
 
 
 
