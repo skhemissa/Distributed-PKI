@@ -51,7 +51,7 @@ Global set up:
 
 - Into the D-PKI scripts directory, update the file ledger.conf with the following inputs :
         rpcport >> from file $HOME/.multichain/distributedPKI/params.dat get the value for default-rpc-port    
-        rpcuser and rpcpasswd >> from file $HOME/.multichain/distributedPKI/multichain.conf
+        rpcuser and rpcpassword >> from file $HOME/.multichain/distributedPKI/multichain.conf
         no change for rpchost, chainName, streamName
 
 
