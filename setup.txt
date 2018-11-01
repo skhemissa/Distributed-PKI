@@ -48,7 +48,12 @@ Adding a new node to the distributed ledger:
   Run the following command:
     multichaind distributedPKI@[ip-address]:[port] &
     /!\ The command, included the ip address and the communication port are displayed when the first node start.
-    ... wait few minutes for synchronization
+    ... wait few seconds for ledger synchronization.
+
+Install Savoir as described previously, including the bug !
+
+Update the ledger.conf file of the new node with the local data as describted for the first node
+/!\ the password of the new node isn't the same then the first node.
 
 If you want grant the new node to write into the distributed ledger:
   Getting the wallet address of the new node = Run the following command:
@@ -57,8 +62,3 @@ If you want grant the new node to write into the distributed ledger:
   On the first node, run the following commands:
     multichain-cli distributedPKI grant wallet_id send
     multichain-cli distributedPKI grant wallet_id publicKeys.write
-
-Install Savoir as described previously, including the bug !
-
-Update the ledger.conf file of the new node with the local data as describted for the first node
-/!\ the password of the new node isn't the same then the first node.
